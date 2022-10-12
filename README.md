@@ -1,1 +1,1 @@
-# bss-website-competition
+# particle-simulation

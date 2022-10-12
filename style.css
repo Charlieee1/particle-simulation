@@ -1,0 +1,22 @@
+.nav {
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+.nav a {
+	padding: 14px 16px;
+	font-size: 17px;
+	text-decoration: none;
+	text-align: center;
+}
+.nav a.active {
+	background-color: #800;
+	color: white;
+}
+.nav a.inactive {
+	color: #800;
+}
+.nav a.inactive:hover {
+	background-color: #ccc;
+	color: white;
+}
+

@@ -25,6 +25,6 @@ html {
 	color: #800;
 }
 .nav a.inactive:hover {
-	background-color: #bbb;
+	background-color: #ccc;
 	color: white;
 }

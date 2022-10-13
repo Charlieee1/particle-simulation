@@ -67,7 +67,7 @@ function randomizeSimulationParameters() {
 	for(let i=0;i<typesOfParticles;i++) {
 		for(let j=0;j<typesOfParticles;j++) {
 			attractions[i][j][0] = Math.random() * 2 - 1;
-			attractions[i][j][1] = Math.round(Math.random()*50);
+			attractions[i][j][1] = Math.round(Math.random()*10);
 		}
 	}
 }
@@ -118,7 +118,7 @@ function findMovementVector(c1, c2, d, dx, dy) {
 		let a = .1 * attractions[c1.type][c2.type][0] * (attractions[c1.type][c2.type][1] - d);
 		return [a*dx, a*dy];
 	} else {
-		return [-1 * dx, -1 * dy];
+		return [-2 * dx, -2 * dy];
 	}
 }
 

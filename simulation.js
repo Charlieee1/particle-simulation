@@ -1,16 +1,18 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-var attractions = [ [[.2,8],[.2,50],[.1,50],[0,26]],
-					[[.3,10],[.2,30],[.05,10],[.05,10]],
-					[[.05,10],[.2,50],[.2,30],[.3,10]],
-					[[.2,25],[.1,50],[.2,50],[.3,10]]];
+var attractions = [ [[.2,8],[.2,100],[.1,100],[.1,100],[.1,100],[.05,100]],
+					[[.3,10],[.2,30],[.05,10],[.05,10],[.05,10],[.05,100]],
+					[[.05,10],[.2,100],[.2,30],[.3,10],[.05,10],[.05,100]],
+					[[.05,10],[.1,100],[.2,100],[.3,10],[.2,10],[.05,100]],
+					[[.2,10],[.1,100],[.1,100],[.2,100],[.3,10],[.05,100]],
+					[[.1,100],[.1,100],[.1,100],[.1,100],[.1,100],[.2,30]]];
 var max_speed = 1;
 var width = 1000; // 1900 or 500
 var height = 700; // 850 or 500
 var population = 1000; // 2000 or 500
-var view_radius = 40;
-var typesOfParticles = 4;
+var view_radius = 80;
+var typesOfParticles = 6;
 canvas.width = width;
 canvas.height = height;
 var diagonal = Math.sqrt(width*width+height*height);
@@ -54,6 +56,10 @@ function getColor(cell) {
 			return "yellow";
 		case 3:
 			return "white";
+		case 4:
+			return "green";
+		case 5:
+			return "purple";
 	}
 }
 
@@ -156,7 +162,7 @@ function draw() {
 
 const cells = [];
 for(let i=0;i<population;i++) {
-	cells.push(new Cell(Math.random() < .5 ? 0 : Math.random() < .15 ? 1 : Math.random() < .15 ? 2 : 3, Math.round(Math.random() * width), Math.round(Math.random() * height)));
+	cells.push(new Cell(Math.floor(i*typesOfParticles/population), Math.round(Math.random() * width), Math.round(Math.random() * height)));
 }
 
 var stopped = false;

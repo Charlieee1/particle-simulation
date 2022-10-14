@@ -115,10 +115,10 @@ function normalize(move) {
 
 function findMovementVector(c1, c2, d, dx, dy) {
 	if(d > 10) {
-		let a = .1 * attractions[c1.type][c2.type][0] * (attractions[c1.type][c2.type][1] - d);
+		let a = .001 * attractions[c1.type][c2.type][0] * (attractions[c1.type][c2.type][1] - d);
 		return [a*dx, a*dy];
 	} else {
-		return [-2 * dx, -2 * dy];
+		return [-1 * dx, -1 * dy];
 	}
 }
 
